@@ -1,7 +1,6 @@
 <?php
 namespace chilimatic\lib\Interpreter\Operator;
-
-use chilimatic\lib\interfaces\IFactoryOptions;
+use chilimatic\lib\Interfaces\IFactoryOptions;
 
 /**
  * Class InterpreterOperatorFactory

@@ -1,30 +1,29 @@
 <?php
-
 namespace chilimatic\lib\Interpreter\Operator\Binary;
-use chilimatic\lib\interfaces\IFlyWeightOperate;
+use chilimatic\lib\Interfaces\IFlyWeightOperate;
 
 /**
- * Class InterpreterBinaryXOr
+ * Class InterpreterBinaryAnd
  * @package chilimatic\lib\Interpreter\Operator\Binary
  */
-class InterpreterBinaryXOr implements IFlyWeightOperate
+class InterpreterBinaryAnd implements IFlyWeightOperate
 {
     /**
-     * @param $input1
-     * @param $input2
+     * @param mixed $input1
+     * @param mixed $input2
      *
      * @return int
      */
     public function operate($input1, $input2)
     {
-        return $input1 ^ $input2;
+        return (bool)$input1 & (bool)$input2;
     }
 
     /**
      * @param mixed $input1
      * @param mixed $input2
      *
-     * @return int
+     * @return int|mixed
      */
     public function __invoke($input1, $input2)
     {

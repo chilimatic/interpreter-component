@@ -1,7 +1,6 @@
 <?php
 namespace chilimatic\lib\Interpreter\Operator\Binary;
-
-use chilimatic\lib\interfaces\IFlyWeightOperate;
+use chilimatic\lib\Interfaces\IFlyWeightOperate;
 
 /**
  * Class InterpreterBinaryOr

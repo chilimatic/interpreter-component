@@ -1,7 +1,7 @@
 <?php
 
 namespace chilimatic\lib\Interpreter\Type;
-use chilimatic\lib\interfaces\IFlyWeightExecute;
+use chilimatic\lib\Interfaces\IFlyWeightExecute;
 
 /**
  * Class InterpreterTypeBoolean
@@ -12,7 +12,7 @@ class InterpreterTypeBoolean implements IFlyWeightExecute
     /**
      * @var string
      */
-    const PATTERN = "(true|false|0|1)";
+    const PATTERN = "/^(true|false|0|1)$/";
 
     /**
      * @param string $string
@@ -21,13 +21,12 @@ class InterpreterTypeBoolean implements IFlyWeightExecute
      */
     public function execute($string)
     {
+        $string = strtolower((string) $string);
         if (!preg_match(self::PATTERN, $string)) {
             return null;
         }
 
-        $string = strtolower($string);
-
-        if ($string{0} === 't' || $string{0} === 1) {
+        if ($string{0} === 't' || $string{0} === '1') {
             return true;
         } else {
             return false;

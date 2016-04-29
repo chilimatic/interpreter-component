@@ -16,7 +16,7 @@ class InterpreterBinaryAnd implements IFlyWeightOperate
      */
     public function operate($input1, $input2)
     {
-        return (bool)$input1 & (bool)$input2;
+        return (binary) $input1 & (binary) $input2;
     }
 
     /**

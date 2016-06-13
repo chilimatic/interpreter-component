@@ -19,7 +19,7 @@ class InterpreterOperatorFactory implements IFactoryOptions
      *
      * @return mixed
      */
-    public function make($name, $options)
+    public function make(string $name, $options)
     {
         if (!$name) {
             return null;
@@ -48,7 +48,7 @@ class InterpreterOperatorFactory implements IFactoryOptions
      *
      * @return mixed
      */
-    public function __invoke($name, $options)
+    public function __invoke(string $name, $options)
     {
         return $this->make($name, $options);
     }
